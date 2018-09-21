@@ -7,6 +7,10 @@
 <h1>Shop Now...</h1>
 <h2>Pick from thousands of songs</h2>
 <ul>
-    <li>hiphop</li>
+    <!--b/c we will have millions of products, we don't want a different method for each product. hence only calls product method
+    -->
+    <li>@Html.ActionLink("hiphop", "product", "store", new {@ProductName = "Product-One"}, new { @class = "text-danger" })</li>
+    <li>@Html.ActionLink("country", "product", "store", new { @ProductName = "Product-Two" }, null)</li>
+    <li>@Html.ActionLink("rock", "product", "store", new { @ProductName = "Product-Three" }, null)</li>
 </ul>
 
