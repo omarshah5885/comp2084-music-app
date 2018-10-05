@@ -1,0 +1,31 @@
+﻿using music_store_app.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+
+namespace music_store_app.Controllers
+{
+    public class AlbumsController : Controller
+    {
+        // GET: Albums
+        public ActionResult Index()
+        {
+            // instantiate a collections named albums and link it to the models namespace above where the Album class is located
+            var albums = new List<Album>();
+
+            // create a loop to instantiate 10 MusicAlbum objects 
+            for (int i = 1; i <= 10; i++)
+            {
+                // instantiate a new album title by setting the Title property in Album class
+                var AlbumTitle = new Album { Title = "Album " + i.ToString() }; // we had to convert value to string b/c Title property is defined as string in model
+
+                // add title to albums collections
+                albums.Add(AlbumTitle);
+            }
+            // returning the albums collections to the view
+            return View(albums);
+        }
+    }
+}

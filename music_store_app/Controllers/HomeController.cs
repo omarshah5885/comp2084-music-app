@@ -26,11 +26,6 @@ namespace music_store_app.Controllers
 
             return View();
         }
-
-        public ActionResult Shop()
-        {
-            return View();
-        }
            
     }
 }
