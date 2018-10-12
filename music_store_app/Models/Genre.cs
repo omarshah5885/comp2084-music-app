@@ -18,6 +18,7 @@ namespace music_store_app.Models
         public int GenreId { get; set; }
 
         [StringLength(120)]
+        [Display(Name = "Genre")] // adding alias to Genre
         public string Name { get; set; }
 
         [StringLength(4000)]

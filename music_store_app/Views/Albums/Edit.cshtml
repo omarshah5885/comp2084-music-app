@@ -6,8 +6,8 @@
 }
 
 <h2>Edit</h2>
-
-@using (Html.BeginForm())
+0
+@using (Html.BeginForm( "Edit", "Albums", new { id= Model.AlbumId }, FormMethod.Post, new { enctype = "multipart/form-data" } ))
 {
     @Html.AntiForgeryToken()
     
@@ -52,8 +52,10 @@
         <div class="form-group">
             @Html.LabelFor(model => model.AlbumArtUrl, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.AlbumArtUrl, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.AlbumArtUrl, "", new { @class = "text-danger" })
+                @*@Html.EditorFor(model => model.AlbumArtUrl, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.AlbumArtUrl, "", new { @class = "text-danger" })*@
+                <img src="@Model.AlbumArtUrl" alt="@Model.Title" />
+                <input type="file" name="AlbumArtUrl" /> 
             </div>
         </div>
 

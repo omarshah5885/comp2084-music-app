@@ -18,6 +18,7 @@ namespace music_store_app.Models
         public int ArtistId { get; set; }
 
         [StringLength(120)]
+        [Display(Name ="Artist")]
         public string Name { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

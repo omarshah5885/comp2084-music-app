@@ -26,10 +26,13 @@ namespace music_store_app.Models
         [StringLength(160)]
         public string Title { get; set; }
 
-        [Column(TypeName = "numeric")]
+        [Column(TypeName = "numeric")] 
+        [DataType(DataType.Currency)]
+        [Range(0,10000, ErrorMessage = "Not acceptable price")]
         public decimal Price { get; set; }
 
         [StringLength(1024)]
+        [Display(Name = "Album Art")] // adding alias to AlbumArtUrl 
         public string AlbumArtUrl { get; set; }
 
         public virtual Artist Artist { get; set; }

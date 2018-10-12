@@ -1,16 +1,16 @@
 ﻿@model IEnumerable<music_store_app.Models.Album>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Albums";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>@ViewBag.Title</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
+<table class="table sortable">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Artist.Name)
@@ -45,7 +45,7 @@
             @Html.DisplayFor(modelItem => item.Price)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.AlbumArtUrl)
+            <img src="@item.AlbumArtUrl" alt="@item.Title" width="75" /> 
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.AlbumId }) |
